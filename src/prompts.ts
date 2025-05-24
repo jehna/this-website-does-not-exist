@@ -12,16 +12,19 @@ Keep the chatter to an absolute minimum.
 
 export const INITIAL_PROMPT = (model: string) =>
   `
-Create a blog post website for a page that's titled "This website does not exist".
-The page should have a title, a description, and a list of blog posts.
-The blog posts should be in the following format:
-- Title: The title of the blog post
-- Date: The date of the blog post
-- Content: The content of the blog post
+Create a single blog post page titled "This website does not exist".
+This should be an individual blog post, not a blog homepage or list of posts.
 
-The page should be styled with a modern, clean design.
+The blog post should include:
+- A compelling title: "This website does not exist"
+- Publication date (you can make one up)
+- Full blog post content/article body
+- Author information (built by Jesse Luoto, gravatar https://gravatar.com/avatar/ce355973d6d287db8fa929a6a642322e256b583b518ed6d66ca5f1a232907826)
 
-This blog post should convey the message that the website does not exist; you are
-and AI model called "${model}" that's generating this website on the fly whenever
-a user visits the website. So on each request there will be a new website.
+The blog post content should convey the message that this website does not actually exist;
+you are an AI model called "${model}" that's generating this website and its content on the fly
+whenever a user visits. Each request creates a completely new website with new content.
+
+The page should be styled as a modern, clean blog post layout with proper typography
+and reading experience.
 `.trim();
