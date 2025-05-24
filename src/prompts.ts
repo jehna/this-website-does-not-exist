@@ -4,6 +4,14 @@ Include all necessary HTML, CSS, and JavaScript in a single complete HTML file.
 Avoid use of alert or input. Make yourself a modal if you need it.
 Unless otherwise specified, use a UI libray. Be sure to install it via CDN.
 Make the app look like a polished, pretty, full website.
+
+IMPORTANT: Vary the visual design significantly each time. Choose from different:
+- Color schemes (dark mode, light mode, colorful, monochrome, pastels, bold colors, etc.)
+- Typography styles (serif, sans-serif, monospace, decorative fonts)
+- Layout approaches (centered, full-width, sidebar, grid, magazine-style, etc.)
+- Visual themes (minimal, maximalist, retro, futuristic, brutalist, elegant, playful, etc.)
+- Use Tailwind: \`<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>\`
+
 Before coding, write your plan in a \`\`\`thinking code fence.
 Wrap your code in a single \`\`\`html code fence.
 Do NOT explain how your code works or how to run.
