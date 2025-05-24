@@ -1,46 +1,15 @@
-import Cerebras from "@cerebras/cerebras_cloud_sdk";
-import dotenv from "dotenv";
-import { INITIAL_PROMPT } from "./prompts";
-import { BASE_SYSTEM_PROMPT } from "./prompts";
+import express from "express";
+import { generateResponse } from "./generate-response";
 
-dotenv.config();
+const PORT = process.env["PORT"] || 3000;
 
-const cerebras = new Cerebras({
-  apiKey: process.env["CEREBRAS_API_KEY"],
+const app = express();
+
+app.get("/", async (req, res) => {
+  const response = await generateResponse();
+  res.send(response);
 });
 
-const model = "qwen-3-32b";
-
-async function main() {
-  const response = await cerebras.chat.completions.create({
-    messages: [
-      {
-        role: "system",
-        content: BASE_SYSTEM_PROMPT,
-      },
-      {
-        role: "user",
-        content: INITIAL_PROMPT(model),
-      },
-    ],
-    model,
-    stream: false,
-    max_completion_tokens: 16382,
-    temperature: 0.7,
-    top_p: 0.95,
-  });
-
-  console.log(
-    extractCodeFromFence(
-      (response.choices as { message: { content: string } }[])[0].message
-        .content
-    )
-  );
-}
-
-function extractCodeFromFence(text: string): string {
-  const htmlMatch = text.match(/```html\n([\s\S]*?)\n```/);
-  return htmlMatch ? htmlMatch[1].trim() : text;
-}
-
-main();
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

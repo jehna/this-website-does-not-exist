@@ -12,8 +12,12 @@
   "dependencies": {
     "@cerebras/cerebras_cloud_sdk": "^1.35.0",
     "dotenv": "^16.5.0",
+    "express": "^5.1.0",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/express": "^5.0.2"
+  }
 }
