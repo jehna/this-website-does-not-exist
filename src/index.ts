@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
     "X-XSS-Protection": "1; mode=block",
     "Referrer-Policy": "strict-origin-when-cross-origin",
     "Content-Security-Policy":
-      "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
+      "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https://gravatar.com;",
     "Content-Type": "text/html; charset=utf-8",
     "Content-Language": "en",
   });
