@@ -9,9 +9,17 @@ const cerebras = new Cerebras({
   apiKey: process.env["CEREBRAS_API_KEY"],
 });
 
-const model = "qwen-3-32b";
+const models = [
+  //"llama3.1-8b", // 8b seems to be too small model to generate good websites
+  "qwen-3-32b",
+  "llama-3.3-70b",
+  "llama-4-scout-17b-16e-instruct",
+];
+
+const randomModel = () => models[Math.floor(Math.random() * models.length)];
 
 export async function generateResponse() {
+  const model = randomModel();
   const response = await cerebras.chat.completions.create({
     messages: [
       {
