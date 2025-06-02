@@ -40,7 +40,7 @@ The blog post should include:
 - The date, which is ${new Date().toLocaleDateString("en-US")}
 
 The blog post content should convey the message that this website does not actually exist;
-you are an AI model called "${model}" (different ecery request) that's generating this website and its content on the fly
+you are an AI model called "${model}" (different every request) that's generating this website and its content on the fly
 whenever a user visits. Each request creates a completely new website with new content.
 
 Add a paragraph that this is created using https://cerebras.ai, which is a service that can
